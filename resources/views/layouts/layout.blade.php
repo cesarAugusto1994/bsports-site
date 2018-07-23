@@ -98,6 +98,8 @@
 
 				@yield('content')
 
+        @include('partials.footer')
+
     </div>
     <!--Wrapper Div End-->
 

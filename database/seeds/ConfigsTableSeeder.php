@@ -29,6 +29,7 @@ class ConfigsTableSeeder extends Seeder
           'empresa-banner-principal-texto' => 'Propaganda',
           'empresa-banner-principal-link' => '#',
           'empresa-banner-principal-imagem' => 'holder.js/275x500',
+          'empresa-banner-topo-vertical' => 'holder.js/944x67',
           'categorias-home' => true,
           'pagina-regulamento' => '/',
         ];

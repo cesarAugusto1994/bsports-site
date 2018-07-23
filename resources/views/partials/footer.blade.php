@@ -70,7 +70,14 @@
                 <p>© 2004-2018 Rights Reserved <a href="http://finelayers.net" target="_blank">techlinqs.net</a> Soccer City Sports News Website Theme</p>
             </div>
             <div class="col-md-6 col-sm-6">
-                <div class="footer-social text-right"> Follow us on: <a href="#" class="fb"><i class="fa fa-facebook"></i></a> <a href="#" class="tw"><i class="fa fa-twitter"></i></a> <a href="#" class="ytp"><i class="fa fa-youtube-play"></i></a> <a href="#" class="vim"><i class="fa fa-vimeo"></i></a> <a href="#" class="gp"><i class="fa fa-google-plus"></i></a> </div>
+                <div class="footer-social text-right"> Follow us on:
+                  <!--<a href="#" class="fb"><i class="fa fa-facebook"></i></a>
+                  <a href="#" class="tw"><i class="fa fa-twitter"></i></a>
+                  <a href="#" class="ytp"><i class="fa fa-youtube-play"></i></a>
+                  <a href="#" class="vim"><i class="fa fa-vimeo"></i></a>
+                  <a href="#" class="gp"><i class="fa fa-google-plus"></i></a>
+                -->
+                </div>
             </div>
         </div>
     </div>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pessoa\Jogador;
+use App\Models\Jogador\Mensalidade;
+use Auth;
 
 class JogadoresController extends Controller
 {
@@ -45,5 +47,12 @@ class JogadoresController extends Controller
         return $jogadores->toJson();
     }
 
+    public function mensalidade()
+    {
+      $jogadores = Mensalidade::all();
 
+      dd($jogadores);
+
+      return view('admin.jogadores.index', compact('jogadores'));
+    }
 }

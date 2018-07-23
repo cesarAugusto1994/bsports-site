@@ -11,6 +11,9 @@
         <div class="featured-news-block">
             <div class="container">
                 <div class="row">
+
+                    <div class="full-ad"> <img src="{{ \App\Helpers\Helper::getConfig('empresa-banner-topo-vertical') ?? 'holder.js/944x67' }}" alt=""> </div>
+
                     <div class="col-md-9 p3r">
 
                         <div id="featured-slider" class="owl-carousel owl-theme" style="min-height:500px;max-height:500px;">
@@ -42,8 +45,10 @@
                                       </div>
                                     </div> <!---->
                                   </div>
-                                  <div class="player-ranking-links"><a>Rankings Breakdown</a> <a>News</a>
-                                    <a>Video</a>
+                                  <div class="player-ranking-links">
+                                    <a href="{{route('classificacao')}}">Rankings</a>
+                                    <a href="{{route('jogador', ['slug'=> str_slug($item['primeiro_nome']), 'id' => $item['id']])}}">Informações</a>
+                                    <!--<a>Video</a>-->
                                   </div>
                                 </div>
                                   <div class="player-ranking-bottom">
@@ -58,7 +63,7 @@
                                             </div>
                                           <div class="player-ranking-move">
                                             <div class="data-label">
-                                              <div class="data-label-text">Move</div>
+                                              <div class="data-label-text">Posição</div>
                                             </div>
                                             <div class="data-number">
                                               <span class="move-none"></span>
@@ -67,7 +72,7 @@
                                           </div>
                                           <div class="player-ranking-points">
                                             <div class="data-label">
-                                              <div class="data-label-text">Points</div>
+                                              <div class="data-label-text">Pontos</div>
                                             </div>
                                             <div class="data-number">{{ $item['pontos'] }}</div>
                                           </div>
@@ -77,9 +82,9 @@
                                   </div>
 
                                   <div class="player-ranking-bottom-links">
-                                    <a>View All</a>
+                                    <!--<a>View All</a>
                                     <a>Learn More</a>
-                                    <a>Rankings Home</a>
+                                    <a>Rankings Home</a>-->
                                   </div>
                                   </div>
                                   <div class="player-ranking-image">
@@ -87,7 +92,7 @@
                                       <div class="item-container">
                                         <div class="previous-item">
                                           <div class="image-wrap">
-                                            <img src="https://www.atpworldtour.com/-/media/tennis/players/gladiator/2018/nadal_full_ao18.png" class="">
+                                            <!--<img src="https://www.atpworldtour.com/-/media/tennis/players/gladiator/2018/nadal_full_ao18.png" class="">-->
                                           </div>
                                         </div>
                                       </div>
@@ -107,6 +112,7 @@
                                 <h3> <a href="{{ \App\Helpers\Helper::getConfig('empresa-banner-principal-link') }}">{{ \App\Helpers\Helper::getConfig('empresa-banner-principal-texto') }}</a> </h3>
                             </div>
                             <img src="{{ \App\Helpers\Helper::getConfig('empresa-banner-principal-imagem') }}" alt="" /> </div>
+
                     </div>
                 </div>
             </div>

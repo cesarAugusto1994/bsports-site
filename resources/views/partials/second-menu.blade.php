@@ -66,7 +66,7 @@
                         <a href="{{ route('agendar_partida') }}" class="login-btn"> <i class="fa fa-calendar-o"></i> Agendamento</a>
                     </li>
                     <li>
-                        <a href="{{ url('/admin') }}" class="login-btn"> <i class="fa fa-user"></i> Área do Jogador</a>
+                        <a href="{{ route('perfil.index') }}" class="login-btn"> <i class="fa fa-user"></i> Área do Jogador</a>
                     </li>
                 </ul>
             </div>

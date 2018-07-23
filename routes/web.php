@@ -31,11 +31,16 @@ Route::middleware('loadCache')->group(function() {
   Route::get('/import-jogadores', 'HomeController@importJogadores')->name('import_jogadores');
   Route::get('/import-partidas', 'HomeController@importPartidas')->name('import_partidas');
 
+  Route::get('/partidas/ajax', 'PartidasController@partidasAjax')->name('partidas_ajax');
+
   Route::group(['prefix' => 'admin'], function () {
       Voyager::routes();
 
-      Route::get('/appointment', 'HomeController@agendamento')->name('agendar_partida');
-
+      Route::group(['middleware' => 'auth'], function () {
+          Route::get('/appointment', 'PartidasController@agendamento')->name('agendar_partida');
+          Route::resource('perfil', 'PerfilController');
+          Route::get('/mensalidade', 'JogadoresController@mensalidade')->name('mensalidade');
+      });
   });
 
 });

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Pessoa\Jogador;
 use App\Models\Torneio\Resultado;
-use App\Models\Quadras;
+use App\Models\{Quadras, Torneio};
 
 class Partida extends Model
 {
@@ -24,5 +24,10 @@ class Partida extends Model
     public function quadra()
     {
         return $this->belongsTo(Quadras::class, 'quadra_id');
+    }
+
+    public function torneio()
+    {
+        return $this->belongsTo(Torneio::class, 'torneio_id');
     }
 }

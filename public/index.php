@@ -50,6 +50,7 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 */
 
 header('Access-Control-Allow-Headers: Content-Type, x-xsrf-token, x_csrftoken');
+ini_set('max_execution_time', 1800);
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 

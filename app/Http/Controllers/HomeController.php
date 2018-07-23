@@ -8,6 +8,7 @@ use App\Models\Pessoa\{Jogador, Telefone};
 use App\Models\Torneio\Resultado;
 use Illuminate\Pagination\{Paginator, LengthAwarePaginator};
 use Illuminate\Support\Collection;
+use App\{User, Role};
 
 class HomeController extends Controller
 {
@@ -58,7 +59,7 @@ class HomeController extends Controller
                 jg.id,
                 pe.nome,
                 categoria_simples_id categoria,
-                sum(pontos) as pontos,
+                sum(pontos) - SUM(bonus) as pontos,
                 '' link,
                 '' url
                 from partida_resultados res
@@ -211,6 +212,25 @@ class HomeController extends Controller
             $jogador->observacao = $data['ds_observacao'] ?? '';
             $jogador->pessoa_id = $pessoa->id;
             $jogador->save();
+
+            $hasUser = \DB::table('users')->where([
+              'email' => $data['ds_email'],
+            ])->get();
+
+            if($hasUser->isEmpty()) {
+
+              $user = User::create([
+                  'name' => $data['nm_jogador'],
+                  'email' => $data['ds_email'],
+                  'password' => bcrypt($data['ds_senha'] ?? 123),
+              ]);
+
+              \DB::table('user_roles')->insert([
+                'user_id' => $user->id,
+                'role_id' => 2
+              ]);
+
+            }
 
             $telefones = [];
 
